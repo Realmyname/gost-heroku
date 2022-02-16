@@ -10,5 +10,5 @@ RUN mkdir gost && apk add --no-cache wget \
 WORKDIR /gost
 EXPOSE ${TLS_PORT} $PORT
 
-CMD exec /gost/gost -L=relay+mwss://$METHOD:$PASSWORD@:$TLS_PORT -L=relay+mwss://$METHOD:$PASSWORD@:$PORT -L=relay+mtls://$METHOD:$PASSWORD@:$TLS_PORT -L=relay+mtls://$METHOD:$PASSWORD@:$PORT
+CMD exec /gost/gost -L=relay+mwss://$METHOD:$PASSWORD@:$TLS_PORT -L=relay+mws://$METHOD:$PASSWORD@:$PORT -L=relay+grpc://$METHOD:$PASSWORD@:$TLS_PORT -L=relay+grpc://$METHOD:$PASSWORD@:$PORT
 
