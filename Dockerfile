@@ -11,4 +11,4 @@ WORKDIR /gost
 EXPOSE ${TLS_PORT} $PORT
 
 #CMD exec /gost/gost -L=relay+mwss://$METHOD:$PASSWORD@:$TLS_PORT -L=relay+mws://$METHOD:$PASSWORD@:$PORT -L=relay+grpc://$METHOD:$PASSWORD@:$TLS_PORT -L=relay+grpc://$METHOD:$PASSWORD@:$PORT
-CMD exec /gost/gost -L=ss+mwss://$METHOD:$PASSWORD@:$TLS_PORT -L=ss+mws://$METHOD:$PASSWORD@:$PORT
+CMD exec /gost/gost -L=ss+mtls://$METHOD:$PASSWORD@:$TLS_PORT -L=ss+mtls://$METHOD:$PASSWORD@:$PORT
