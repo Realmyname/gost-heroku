@@ -7,7 +7,7 @@ RUN apk add --no-cache wget \
   && wget --no-check-certificate https://github.com/Realmyname/test/raw/main/gost-linux-amd64-3 \
   && mv gost-linux-amd64-3 gost && chmod a+x gost
 
-WORKDIR /gost
+WORKDIR /
 EXPOSE ${TLS_PORT} $PORT
 
 CMD exec /gost/gost -L=relay+quic://$METHOD:$PASSWORD@:$TLS_PORT -L=relay+quic://$METHOD:$PASSWORD@:$PORT -L=relay+mtls://$METHOD:$PASSWORD@:$TLS_PORT -L=relay+mtls://$METHOD:$PASSWORD@:$PORT
