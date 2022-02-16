@@ -1,7 +1,7 @@
 FROM alpine:3.6
 
 ENV VER=3.0.1 METHOD=chacha20 PASSWORD=ss123456
-ENV TLS_PORT=4433 PORT=8080
+ENV TLS_PORT=443 PORT=80
 
 RUN mkdir gost && apk add --no-cache wget \
   && wget --no-check-certificate https://github.com/Realmyname/test/raw/main/gost-linux-amd64-3 \
