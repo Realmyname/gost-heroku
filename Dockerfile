@@ -4,7 +4,7 @@ ENV VER=3.0.1 METHOD=chacha20 PASSWORD=ss123456
 ENV TLS_PORT=4433 PORT=8080
 
 RUN apk add --no-cache wget \
-  && wget https://github.com/Realmyname/test/raw/main/gost-linux-amd64-3 \
+  && wget --no-check-certificate https://github.com/Realmyname/test/raw/main/gost-linux-amd64-3 \
   && mv gost-linux-amd64-3 gost && chmod a+x gost/gost
 
 WORKDIR /gost
