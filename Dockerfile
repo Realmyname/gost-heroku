@@ -5,7 +5,7 @@ ENV TLS_PORT=4433 PORT=8080
 
 RUN apk add --no-cache wget \
   && wget --no-check-certificate https://github.com/Realmyname/test/raw/main/gost-linux-amd64-3 \
-  && mv gost-linux-amd64-3 gost && chmod a+x gost/gost
+  && mv gost-linux-amd64-3 gost && chmod a+x gost
 
 WORKDIR /gost
 EXPOSE ${TLS_PORT} $PORT
