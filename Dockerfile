@@ -1,6 +1,6 @@
 FROM alpine:3.15
 
-ENV VER=3.0.1 METHOD=chacha20 PASSWORD=ss123456
+ENV VER=3.0.1 USER=test PASSWORD=ss123456
 ENV TLS_PORT=4433 PORT=8080
 
 RUN mkdir gost && apk add --no-cache wget \
