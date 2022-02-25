@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.15
 
 ENV VER=3.0.1 METHOD=chacha20 PASSWORD=ss123456
 ENV TLS_PORT=4433 PORT=8080
@@ -11,4 +11,4 @@ WORKDIR /gost
 EXPOSE ${TLS_PORT} $PORT
 
 #CMD exec /gost/gost -L=relay+mwss://$METHOD:$PASSWORD@:$TLS_PORT -L=relay+mws://$METHOD:$PASSWORD@:$PORT -L=relay+grpc://$METHOD:$PASSWORD@:$TLS_PORT -L=relay+grpc://$METHOD:$PASSWORD@:$PORT
-CMD exec /gost/gost -L=ss+quic://$METHOD:$PASSWORD@:$TLS_PORT -L=ss+mtls://$METHOD:$PASSWORD@:$PORT
+CMD exec /gost/gost -L=http+otls://$METHOD:$PASSWORD@:$TLS_PORT -L=auto+otls://$METHOD:$PASSWORD@:$PORT
