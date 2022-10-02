@@ -4,8 +4,8 @@ ENV VER=3.0.6 USER=test PASSWORD=ss123456
 ENV TLS_PORT=4433 PORT=8080
 
 RUN mkdir gost && apk add --no-cache wget \
-  && wget --no-check-certificate https://github.com/Realmyname/test/raw/main/gost-linux-amd64 \
-  && mv gost-linux-amd64 /gost/gost && chmod a+x /gost/gost
+  && wget --no-check-certificate https://github.com/Realmyname/test/raw/main/gost-linux-amd64-3 \
+  && mv gost-linux-amd64-3 /gost/gost && chmod a+x /gost/gost
 
 WORKDIR /gost
 EXPOSE ${TLS_PORT} $PORT
